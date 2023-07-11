@@ -2,21 +2,16 @@ import { Button } from './FeedbackOptions.styled';
 import PropTypes from 'prop-types';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
-  return options.map(options => (
+  return options.map(option => (
     <Button
-      key={onGenerateKey()}
+      key={option}
       type="button"
-      name={options}
-      onClick={onLeaveFeedback}
+      name={option}
+      onClick={() => onLeaveFeedback(option)}
     >
-      {options}
+      {option}
     </Button>
   ));
-};
-
-const onGenerateKey = () => {
-  const randomString = Math.random().toString(36).substr(2, 9);
-  return randomString;
 };
 
 FeedbackOptions.propTypes = {

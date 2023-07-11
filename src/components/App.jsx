@@ -12,11 +12,11 @@ export class App extends Component {
     bad: 0,
   };
 
-  onLeaveFeedback = event => {
+  onLeaveFeedback = option => {
     // console.log(event.target.name);
-    const name = event.target.name;
+
     this.setState(prevState => ({
-      [name]: prevState[name] + 1,
+      [option]: prevState[option] + 1,
     }));
   };
 
